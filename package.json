@@ -1,0 +1,29 @@
+{
+  "name": "burgersql",
+  "version": "1.0.0",
+  "description": "burger format sequelized",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrw4466/burgerSQL.git"
+  },
+  "author": "jake wyatt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrw4466/burgerSQL/issues"
+  },
+  "homepage": "https://github.com/jrw4466/burgerSQL#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.3.6",
+    "sequelize": "^4.4.2"
+  }
+}

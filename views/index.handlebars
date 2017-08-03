@@ -1,0 +1,73 @@
+<div class="jumbotron">
+  <div class="container-fluid">
+    <div id="header" class="row">
+      <div class="col-lg-12">
+          <img src="/images/cheeseburger.png" id="header-image" alt="burger">
+          <h1>Eat Da Burger</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div id="content" class="row">
+    <div class="col-lg-6">
+      <h2>Burgers Not Devoured!</h2>
+      <div class="panel-body">
+        <div class="well">
+          <ol>
+            {{#each burgers}}
+              {{#unless this.devoured}}
+                <li>
+                  {{this.burger_name}}
+                  <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button type="submit">Devour?</button>
+                  </form>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h2>Burgers Eaten!</h2>
+      <div class="panel-body">
+        <div class="well">
+          <ol>
+            {{#each burgers}}
+              {{#if this.devoured}}
+                <li>
+                  {{this.burger_name}}
+                  <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="false">
+                    <button type="submit">Regurgitate?</button>
+                  </form>
+                </li>
+              {{/if}}
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<div class="container-fluid">
+  <div id="content" class="row">
+    <div class="col-lg-12">
+      <h2>Add a Burger</h2>
+      <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="burger_name">
+        </div>
+        <div class="form-group">
+          <label for="devoured"></label><br>
+        </div>
+        <button type="submit">Add Burger</button>
+      </form>
+    </div>
+  </div>
+</div>    
